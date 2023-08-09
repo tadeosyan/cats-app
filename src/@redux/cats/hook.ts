@@ -3,13 +3,13 @@ import { Category } from "./types";
 import axios from "axios";
 import { actionTypes } from "./actionTypes";
 
-export const useCatsActions = () => {
+axios.defaults.baseURL = "https://api.thecatapi.com/v1/";
+
+export const useCatsActions: any = () => {
   const fetchCategories = () => {
     return async (dispatch: Dispatch) => {
       try {
-        const response = await axios.get<Category[]>(
-          `${process.env.API_URL}/categories`
-        );
+        const response = await axios.get<Category[]>("categories");
 
         const categories = response.data;
         dispatch({ type: actionTypes.FETCH_CATEGORIES, payload: categories });
@@ -27,7 +27,7 @@ export const useCatsActions = () => {
     return async (dispatch: Dispatch) => {
       try {
         const response = await axios.get(
-          `${process.env.API_URL}/images/search?limit=10&page=1&category_ids=${categoryId}`
+          `images/search?limit=10&page=1&category_ids=${categoryId}`
         );
         dispatch({
           type: actionTypes.FETCH_CAT_IMAGES,
@@ -43,9 +43,7 @@ export const useCatsActions = () => {
     return async (dispatch: Dispatch) => {
       try {
         const response = await axios.get(
-          `${process.env.API_URL}/images/search?limit=10&page=${
-            page + 1
-          }&category_ids=${categoryId}`
+          `images/search?limit=10&page=${page + 1}&category_ids=${categoryId}`
         );
         dispatch({
           type: actionTypes.LOAD_MORE_CAT_IMAGES,
