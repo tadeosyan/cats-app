@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Children } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useCatsActions, RootState } from "@redux";
 import { CategorySidebar, CatImage, LoadMoreButton } from "components";
@@ -31,9 +31,9 @@ const MainPage: React.FC = () => {
       <div className={styles.content}>
         <div className={styles.gallery}>
           {categoryId ? (
-            catImages.map((catImage) => (
-              <CatImage key={catImage.id} url={catImage.url} />
-            ))
+            Children.toArray(
+              catImages.map((catImage) => <CatImage url={catImage.url} />)
+            )
           ) : (
             <h2 className={styles.title}>Category is not selected</h2>
           )}
