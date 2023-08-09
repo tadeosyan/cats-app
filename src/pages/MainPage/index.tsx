@@ -1,9 +1,13 @@
-import React, { useEffect, Children } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useCatsActions, RootState } from "@redux";
-import { CategorySidebar, CatImage, LoadMoreButton } from "components";
+import React, { useEffect, Children } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useCatsActions, RootState } from '@redux';
+import {
+  CategorySidebar,
+  CatImage,
+  LoadMoreButton,
+} from 'components';
 
-import styles from "./MainPage.module.css";
+import styles from './MainPage.module.css';
 
 const MainPage: React.FC = () => {
   const dispatch = useDispatch();
@@ -32,14 +36,16 @@ const MainPage: React.FC = () => {
         <div className={styles.gallery}>
           {categoryId ? (
             Children.toArray(
-              catImages.map((catImage) => <CatImage url={catImage.url} />)
+              catImages.map((catImage) => (
+                <CatImage url={catImage.url} />
+              ))
             )
           ) : (
             <h2 className={styles.title}>Category is not selected</h2>
           )}
         </div>
         <div>
-          {catImages.length !== 0 && (
+          {catImages.length > 0 && (
             <LoadMoreButton handleLoadMore={handleLoadMore} />
           )}
         </div>
