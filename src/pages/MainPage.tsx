@@ -22,10 +22,16 @@ const MainPage: React.FC = () => {
   return (
     <div>
       <CategorySidebar categories={categories} />
-      {catImages.map((catImage) => (
-        <CatImage key={catImage.id} url={catImage.url} />
-      ))}
-      <LoadMoreButton handleLoadMore={handleLoadMore} />
+      {categoryId ? (
+        catImages.map((catImage) => (
+          <CatImage key={catImage.id} url={catImage.url} />
+        ))
+      ) : (
+        <h2>Category is not selected</h2>
+      )}
+      {catImages.length !== 0 && (
+        <LoadMoreButton handleLoadMore={handleLoadMore} />
+      )}
     </div>
   );
 };
