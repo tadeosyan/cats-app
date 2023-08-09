@@ -39,7 +39,7 @@ export const useCatsActions: any = () => {
     };
   };
 
-  const loadMoreImages = (categoryId: number, page: 0) => {
+  const loadMoreCatImages = (categoryId: number, page: 0) => {
     return async (dispatch: Dispatch) => {
       try {
         const response = await axios.get(
@@ -55,5 +55,5 @@ export const useCatsActions: any = () => {
     };
   };
 
-  return { fetchCategories, setCategoryId, fetchCatImages, loadMoreImages };
+  return { fetchCategories, setCategoryId, fetchCatImages, loadMoreCatImages };
 };
