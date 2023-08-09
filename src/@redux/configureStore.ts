@@ -1,11 +1,11 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-//import catsReducer from "./cats/reducers";
+import catsReducer from "./cats/reducers";
 
 const configureStore = () => {
   const reducers = combineReducers({
-    //cats: catsReducer,
+    cats: catsReducer,
   });
 
   const store = createStore(

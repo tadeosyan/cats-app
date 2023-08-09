@@ -1,7 +1,8 @@
 import { combineReducers } from "redux";
 import { actionTypes } from "./actionTypes";
+import { Cats, Action } from "./types";
 
-const categoriesReducer = (state: [], action: any) => {
+const categoriesReducer = (state: Cats["categories"] = [], action: Action) => {
   switch (action.type) {
     case actionTypes.FETCH_CATEGORIES:
       return action.payload;
@@ -10,7 +11,7 @@ const categoriesReducer = (state: [], action: any) => {
   }
 };
 
-const catImagesReducer = (state: [], action: any) => {
+const catImagesReducer = (state: Cats["catImages"] = [], action: Action) => {
   switch (action.type) {
     case actionTypes.FETCH_CAT_IMAGES:
       return action.payload;
@@ -21,7 +22,7 @@ const catImagesReducer = (state: [], action: any) => {
   }
 };
 
-const categoryIdReducer = (state: 0, action: any) => {
+const categoryIdReducer = (state: Cats["categoryId"] = 0, action: Action) => {
   switch (action.type) {
     case actionTypes.SET_CATEGORY_ID:
       return action.payload;
