@@ -1,0 +1,15 @@
+.loadMoreButton {
+    background: black;
+    color: white;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: all 0.5 ease;
+    font-size: medium;
+    margin: 10px 0 15px 0
+}
+
+.loadMoreButton:hover  {
+    background-color: white;
+    color: black;
+        
+}

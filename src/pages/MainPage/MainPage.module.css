@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    width: 10%;
+    height: 100%;
+    position: fixed;
+    color: #f2f2f2;
+    padding: 1.5em 3.5em;
+    background-color: #030303;
+}
+
+.wrapper {
+    padding: 1.5em 0;
+	margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-left: 10%;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+ 
+ 

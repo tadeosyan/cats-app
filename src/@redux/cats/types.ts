@@ -20,5 +20,5 @@ export type Cats = RootState["cats"];
 
 export interface Action {
   type: string;
-  payload?: any;
+  payload?: Category[] | number | any;
 }

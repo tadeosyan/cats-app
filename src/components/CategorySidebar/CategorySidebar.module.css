@@ -1,0 +1,22 @@
+.menu{
+	display: block;
+	text-align: center;
+	}
+
+.menuList{
+	list-style-type: none;
+    padding: 0px;
+    width: 100%;
+}
+
+.voiceMenu {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size:1.2em;
+    cursor: pointer;
+}
+
+.active {
+    color: brown;
+    font-size:1.2em;
+}
